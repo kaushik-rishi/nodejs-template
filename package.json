@@ -36,6 +36,7 @@
     "@asyncapi/generator-hooks": "^0.1.0",
     "filenamify": "^4.1.0",
     "lodash": "^4.17.15",
+    "js-beautify": "^1.13.5",
     "markdown-toc": "^1.2.0"
   },
   "devDependencies": {
@@ -75,6 +76,7 @@
     ]
   },
   "generator": {
+    "renderer": "react",
     "supportedProtocols": [
       "amqp",
       "mqtt",
@@ -99,16 +101,16 @@
         "default": "./"
       }
     },
+    "hooks": {
+      "@asyncapi/generator-hooks": "createAsyncapiFile"
+    },
     "nonRenderableFiles": [
       "src/api/middlewares/*.*",
-      "src/lib/config.js"
+      "src/lib/*.*"
     ],
     "generator": ">=0.50.0 <2.0.0",
     "filters": [
       "@asyncapi/generator-filters"
-    ],
-    "hooks": {
-      "@asyncapi/generator-hooks": "createAsyncapiFile"
-    }
+    ]
   }
 }
